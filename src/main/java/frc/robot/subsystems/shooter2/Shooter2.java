@@ -28,9 +28,19 @@ public class Shooter2 extends SubsystemBase {
         pivoter.getPIDController().setOutputRange(-0.6, 0.6);
     }
 
-    public void shoot(double output) {
-        leftShooter.set(output);
-        rightShooter.set(-output);
+    public void shootSpeaker() {
+        leftShooter.setOutput(-1.0);
+        rightShooter.setOutput(-0.4);
+    }
+
+    public void shootAmp() {
+        leftShooter.setOutput(-0.3); // compromise
+        rightShooter.setOutput(-0.3);
+    }
+
+    public void shootStop() {
+        leftShooter.setOutput(0);
+        rightShooter.setOutput(0);
     }
 
     public void load() {

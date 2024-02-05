@@ -43,7 +43,7 @@ public class CommandShooter2 extends Shooter2 {
     public Command readySpeaker() {
         return Commands.runOnce(
             () -> {
-                shoot(1);
+                shootSpeaker();
                 pivot(calculatePivot());
             }
         );
@@ -52,7 +52,7 @@ public class CommandShooter2 extends Shooter2 {
     public Command readyAmp() {
         return Commands.runOnce(
             () -> {
-                shoot(AMP_OUTPUT);
+                shootAmp();
                 pivot(AMP_ANGLE);
             }
         );
@@ -62,7 +62,7 @@ public class CommandShooter2 extends Shooter2 {
         return Commands.runOnce(
             () -> {
                 stopLoading();
-                shoot(0);
+                shootStop();
                 pivot(STOW_ANGLE);
             }
         );

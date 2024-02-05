@@ -13,9 +13,7 @@ public class ArmConstants {
 
     public static enum ArmState {
         ZERO(0.0),
-        SPEAKER(0.0),
-        AMP(5100),
-        HANDOFF(3100);
+        AMP(5100);
         public double extension;
         private ArmState(double extensionPosition) {
             this.extension = extensionPosition;
